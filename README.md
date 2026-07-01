@@ -22,3 +22,5 @@ shl-assessment-recommender/
 ├── README.md
 ├── .gitignore
 └── ROADMAP.md
+
+feat: add initial scraper implementation
