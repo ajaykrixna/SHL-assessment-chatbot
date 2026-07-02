@@ -1,6 +1,13 @@
 from fastapi import FastAPI
+from pydantic import BaseModel
+
+from app.chat import chat
 
 app = FastAPI()
+
+
+class ChatRequest(BaseModel):
+    query: str
 
 
 @app.get("/health")
@@ -9,7 +16,5 @@ def health():
 
 
 @app.post("/chat")
-def chat():
-    return {
-        "response": "Chat endpoint is working."
-    }
+def chat_endpoint(request: ChatRequest):
+    return chat(request.query)
