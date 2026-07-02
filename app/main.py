@@ -24,3 +24,11 @@ def health():
 @app.post("/chat")
 def chat_endpoint(request: ChatRequest):
     return chat(request.messages)
+
+@app.get("/")
+def root():
+    return {
+        "message": "SHL Assessment Chatbot API",
+        "health": "/health",
+        "docs": "/docs"
+    }
