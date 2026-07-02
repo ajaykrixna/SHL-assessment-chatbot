@@ -1,13 +1,19 @@
 from fastapi import FastAPI
 from pydantic import BaseModel
+from typing import List
 
 from app.chat import chat
 
 app = FastAPI()
 
 
+class Message(BaseModel):
+    role: str
+    content: str
+
+
 class ChatRequest(BaseModel):
-    query: str
+    messages: List[Message]
 
 
 @app.get("/health")
@@ -17,4 +23,4 @@ def health():
 
 @app.post("/chat")
 def chat_endpoint(request: ChatRequest):
-    return chat(request.query)
+    return chat(request.messages)
