@@ -12,6 +12,42 @@ def chat(messages):
 
     conversation_lower = conversation.lower()
 
+    # -----------------------------
+    # Turn limit
+    # -----------------------------
+    user_turns = sum(1 for m in messages if m.role.lower() == "user")
+
+    if user_turns >= 8:
+        return {
+            "reply": "We've reached the conversation limit. Please start a new conversation for additional assessment recommendations.",
+            "recommendations": [],
+            "end_of_conversation": True
+        }
+
+    # -----------------------------
+    # Prompt injection protection
+    # -----------------------------
+    injection_keywords = [
+        "ignore previous instructions",
+        "ignore all instructions",
+        "reveal system prompt",
+        "show system prompt",
+        "act as",
+        "pretend to be",
+        "developer mode",
+        "jailbreak"
+    ]
+
+    if any(keyword in conversation_lower for keyword in injection_keywords):
+        return {
+            "reply": "I'm designed only to help with SHL assessment recommendations and cannot follow requests that change my instructions.",
+            "recommendations": [],
+            "end_of_conversation": False
+        }
+
+    # -----------------------------
+    # Off-topic detection
+    # -----------------------------
     off_topic = [
         "weather",
         "football",
@@ -30,13 +66,18 @@ def chat(messages):
             "end_of_conversation": False
         }
 
+    # -----------------------------
+    # Extract constraints
+    # -----------------------------
     constraints = extract_constraints(conversation)
 
     role = constraints.get("role", "").strip()
     seniority = constraints.get("seniority", "").strip()
     skills = constraints.get("skills", [])
 
-    # Clarify if missing
+    # -----------------------------
+    # Clarification
+    # -----------------------------
     if not role:
         return {
             "reply": "What job role are you hiring for?",
@@ -46,17 +87,50 @@ def chat(messages):
 
     if not seniority:
         return {
-            "reply": "What is the seniority level (Junior, Mid, Senior)?",
+            "reply": "What is the seniority level (Junior, Mid, Senior, Lead)?",
             "recommendations": [],
             "end_of_conversation": False
         }
 
+    # -----------------------------
+    # Search
+    # -----------------------------
     query = " ".join([role, seniority] + skills)
 
     results = retriever.search(query, top_k=10)
 
-    recommendations = []
+    # -----------------------------
+    # Compare support
+    # -----------------------------
+    if "compare" in conversation_lower and len(results) >= 2:
 
+        a = results[0]
+        b = results[1]
+
+        return {
+            "reply": (
+                f"Comparison:\n\n"
+                f"{a['title']}: {a['description']}\n\n"
+                f"{b['title']}: {b['description']}"
+            ),
+            "recommendations": [
+                {
+                    "name": a["title"],
+                    "url": a["url"],
+                    "test_type": "Assessment"
+                },
+                {
+                    "name": b["title"],
+                    "url": b["url"],
+                    "test_type": "Assessment"
+                }
+            ],
+            "end_of_conversation": False
+        }
+
+    # -----------------------------
+    # Build recommendations
+    # -----------------------------
     recommendations = []
 
     for item in results:
@@ -96,5 +170,5 @@ def chat(messages):
     return {
         "reply": f"I found {len(recommendations)} SHL assessments matching your requirements.",
         "recommendations": recommendations,
-        "end_of_conversation": True
+        "end_of_conversation": False
     }

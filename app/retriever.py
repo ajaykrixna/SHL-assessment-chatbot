@@ -1,4 +1,5 @@
 import json
+import re
 from rank_bm25 import BM25Okapi
 
 
@@ -12,19 +13,41 @@ class BM25Retriever:
             for item in self.catalog
         ]
 
-        tokenized_docs = [doc.lower().split() for doc in self.documents]
+        tokenized_docs = [self.tokenize(doc) for doc in self.documents]
 
         self.bm25 = BM25Okapi(tokenized_docs)
 
+    def tokenize(self, text):
+        """
+        Lowercase the text and remove punctuation before splitting.
+        """
+        text = text.lower()
+        text = re.sub(r"[^\w\s]", " ", text)
+        return text.split()
+
     def search(self, query, top_k=10):
-        tokenized_query = query.lower().split()
+
+        if not query.strip():
+            return []
+
+        tokenized_query = self.tokenize(query)
 
         scores = self.bm25.get_scores(tokenized_query)
 
         ranked = sorted(
             zip(scores, self.catalog),
-            reverse=True,
-            key=lambda x: x[0]
+            key=lambda x: x[0],
+            reverse=True
         )
 
-        return [item for score, item in ranked[:top_k]]
+        # Return only documents with a positive BM25 score
+        results = []
+
+        for score, item in ranked:
+            if score > 0:
+                results.append(item)
+
+            if len(results) >= top_k:
+                break
+
+        return results
