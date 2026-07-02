@@ -1,0 +1,117 @@
+[
+    {
+        "title": "Global Skills Assessment (GSA)",
+        "description": "SHL's Global Skills Assessment measures 96 behavioral skills in 15 minutes. Objective data for onboarding, upskilling, reskilling, and workforce planning.",
+        "url": "https://www.shl.com/products/assessments/behavioral-assessments/global-skills-assessment-gsa/"
+    },
+    {
+        "title": "Universal Competency Framework (UCF)",
+        "description": "Get a rational, consistent, and practical understanding of people’s behaviors at work and if they can succeed in the role.",
+        "url": "https://www.shl.com/products/assessments/behavioral-assessments/universal-competency-framework/"
+    },
+    {
+        "title": "Realistic Job Previews",
+        "description": "Preview roles with scenario-based quizzes that give candidates a feel for what the job would be like before they commit to applying.",
+        "url": "https://www.shl.com/products/assessments/behavioral-assessments/realistic-job-and-culture-previews-rjp/"
+    },
+    {
+        "title": "Situational Judgement Tests",
+        "description": "Match a candidate’s behavioral fit to your role with immersive, interactive scenarios and effective screening at scale.",
+        "url": "https://www.shl.com/products/assessments/behavioral-assessments/situation-judgement-tests-sjt/"
+    },
+    {
+        "title": "SHL Occupational Personality Questionnaire (OPQ)",
+        "description": "Align individual working preferences to business requirements, and produce accurate, fair assessments of each worker’s potential.",
+        "url": "https://www.shl.com/products/assessments/personality-assessment/shl-occupational-personality-questionnaire-opq/"
+    },
+    {
+        "title": "SHL Motivational Questionnaire (MQ)",
+        "description": "Match each individual’s personal motivation to your team and organizational goals, so you can build an engaged, high-performing workforce.",
+        "url": "https://www.shl.com/products/assessments/personality-assessment/shl-motivation-questionnaire-mq/"
+    },
+    {
+        "title": "SHL Verify G+ Test",
+        "description": "Measures general mental ability , or G, and effectively measures candidates’ problem-solving and critical reasoning capabilities.",
+        "url": "https://www.shl.com/assets/documents/rebranded-assets/product-factsheet-verify-g-plus.pdf"
+    },
+    {
+        "title": "SHL Verify Deductive Reasoning",
+        "description": "Measures candidates’ ability to draw logical conclusions and complete scenarios based on the information provided. Tasks include reading statements, then determining which subsequent options cannot be true or must be true.",
+        "url": "https://www.shl.com/assets/documents/rebranded-assets/product-factsheet-verify-deductive-reasoning.pdf"
+    },
+    {
+        "title": "SHL Verify Interactive – Inductive Reasoning",
+        "description": "Measures candidates’ ability to draw inferences from, and understand relationships between, various concepts. Tasks include working out the pattern in a set of images and identifying the correct next image.",
+        "url": "https://www.shl.com/assets/documents/rebranded-assets/product-factsheet-verify-interactive-inductive.pdf"
+    },
+    {
+        "title": "SHL Verify Interactive – Numerical Reasoning",
+        "description": "Measures candidates’ ability to work with numbers and use appropriate mathematics in different situations. Tasks include solving word problems, performing numerical calculations, and interpreting charts and graphs.",
+        "url": "https://www.shl.com/assets/documents/rebranded-assets/product-factsheet-verify-interactive-numerical-reasoning.pdf"
+    },
+    {
+        "title": "Graduate Hiring",
+        "description": "Strengthen your workforce by converting diverse, top-quality graduates with meaningful hiring experiences, fair assessment tools and unrivalled science.",
+        "url": "https://www.shl.com/solutions/talent-acquisition/graduate/"
+    },
+    {
+        "title": "Technology Hiring",
+        "description": "Reboot your technology hiring process to draw in top-quality developers through immersive experiences and AI-powered virtual hiring tools.",
+        "url": "https://www.shl.com/solutions/talent-acquisition/tech-hiring/"
+    },
+    {
+        "title": "Manager Development",
+        "description": "Help new and mid-level managers build leadership skills that boost team engagement and drive business results.",
+        "url": "https://www.shl.com/solutions/talent-management/manager-development/"
+    },
+    {
+        "title": "Technical Skills",
+        "description": "Comprehensively evaluate technical concepts, knowledge, and application, covering 200+ specific IT skills.",
+        "url": "https://www.shl.com/products/assessments/skills-and-simulations/technical-skills/"
+    },
+    {
+        "title": "Coding Simulations",
+        "description": "Assess your tech candidates with AI-powered online coding simulations that measure accuracy and logical correctness, and more.",
+        "url": "https://www.shl.com/products/assessments/skills-and-simulations/coding-simulations/"
+    },
+    {
+        "title": "Language Skills",
+        "description": "Build a strong, multilingual workforce with reliable, AI-powered language assessments.",
+        "url": "https://www.shl.com/products/assessments/skills-and-simulations/language-evaluation/"
+    },
+    {
+        "title": "Contact Center Simulation",
+        "description": "Pressure-test agents for success with job simulations that emulate a real call center environment.",
+        "url": "https://www.shl.com/products/assessments/skills-and-simulations/call-center-simulations/"
+    },
+    {
+        "title": "Business Skills",
+        "description": "Assess candidates for the essential business skills and computer literacy that enterprise teams need today.",
+        "url": "https://www.shl.com/products/assessments/skills-and-simulations/business-skills/"
+    },
+    {
+        "title": "Contact Center Roles",
+        "description": "Identify candidates who excel in delivering exceptional customer service and issue resolution.",
+        "url": "https://www.shl.com/solutions/talent-acquisition/volume-hiring/contact-center-hiring/"
+    },
+    {
+        "title": "Retail and Entry Level Roles",
+        "description": "Spot candidates who meet high customer expectations and thrive in uncertain environments.",
+        "url": "https://www.shl.com/solutions/talent-acquisition/volume-hiring/retail-hiring/"
+    },
+    {
+        "title": "Manufacturing and Industrial Roles",
+        "description": "Find top talent for roles that demand high-quality, safe, and reliable work.",
+        "url": "https://www.shl.com/solutions/talent-acquisition/volume-hiring/manufacturing-hiring/"
+    },
+    {
+        "title": "Professional Roles",
+        "description": "Evaluate today’s critical and measure reskilling potential across various individual contributor roles.",
+        "url": "https://www.shl.com/solutions/talent-acquisition/professional/"
+    },
+    {
+        "title": "Managerial Roles",
+        "description": "Identify managerial skills, potential, and reskilling ability to support the ever-changing demands of people management.",
+        "url": "https://www.shl.com/solutions/talent-acquisition/manager/"
+    }
+]
